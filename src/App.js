@@ -7,15 +7,12 @@ function App () {
   const [todos, setTodos] = useState(todoStore.getTodos());  
   
   useEffect(() => {
-    console.log('useEffect');  
     todoStore.addChangeListener('STORE_TODOS_CHANGE', onChange);
   }, []);
 
   function onChange() {  
-    console.log('onChange', todoStore.getTodo());    
     localStorage.setItem("todos",JSON.stringify(todoStore.getTodo()));
     setTodos(todoStore.getTodos());
-
   }
 
   return (
