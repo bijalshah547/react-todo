@@ -1,12 +1,6 @@
 import dispatcher from "../appDispatcher";
 import actionTypes from "./actionTypes";
 
-export function getTodos() {   
-    dispatcher.dispatch({
-        actionType: actionTypes.GET_TODOS,
-    });
-}
-
 export function addTodo(data) {   
     dispatcher.dispatch({
         actionType: actionTypes.ADD_TODO,
